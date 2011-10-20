@@ -14,13 +14,13 @@
 
 <% cars.each do |car| %>
   <tr>
-    <td><%= car.make_id %></td>
+    <td><%= car.make.name unless car.make.nil? %></td>
     <td><%= car.price %></td>
     <td><%= car.model %></td>
     <td><%= car.year %></td>
     <td><%= car.color %></td>
-    <td><%= car.date_listed %></td>
-    <td><%= car.date_sold %></td>
+    <td><%= car.date_listed.strftime '%m/%d/%y' unless car.date_listed.nil? %></td>
+    <td><%= car.date_sold.strftime '%m/%d/%y' unless car.date_sold.nil? %></td>
     <td><%= link_to 'Show', car %></td>
     <td><%= link_to 'Edit', edit_car_path(car) %></td>
     <td><%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %></td>
