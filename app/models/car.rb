@@ -12,7 +12,7 @@ class Car < ActiveRecord::Base
     year = Time.now.year if year.nil?
 
     # only get cars within this year
-    cars = where("TO_CHAR(date_sold, 'YYYY') = '?'", year)
+    cars = where("TO_CHAR(date_sold, 'YYYY') = ?", year.to_s)
 
     # Merge all dates for a given month in to day 1 of that month for grouping
     # Use year.to_i since we can't sanitize select
