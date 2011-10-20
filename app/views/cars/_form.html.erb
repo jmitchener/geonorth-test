@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :make_id %><br />
-    <%= f.number_field :make_id %>
+    <%= f.collection_select :make_id, Make.all, :id, :name, :prompt => true %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
