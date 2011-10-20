@@ -2,7 +2,8 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @sold_cars = Car.where('date_sold IS NOT NULL')
+    @unsold_cars = Car.where('date_sold IS NULL')
 
     respond_to do |format|
       format.html # index.html.erb

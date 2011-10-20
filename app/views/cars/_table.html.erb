@@ -1,0 +1,29 @@
+<table>
+  <tr>
+    <th>Make</th>
+    <th>Price</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Color</th>
+    <th>Date listed</th>
+    <th>Date sold</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% cars.each do |car| %>
+  <tr>
+    <td><%= car.make_id %></td>
+    <td><%= car.price %></td>
+    <td><%= car.model %></td>
+    <td><%= car.year %></td>
+    <td><%= car.color %></td>
+    <td><%= car.date_listed %></td>
+    <td><%= car.date_sold %></td>
+    <td><%= link_to 'Show', car %></td>
+    <td><%= link_to 'Edit', edit_car_path(car) %></td>
+    <td><%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>

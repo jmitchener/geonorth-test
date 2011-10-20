@@ -1,35 +1,15 @@
 <h1>Listing cars</h1>
 
-<table>
-  <tr>
-    <th>Make</th>
-    <th>Price</th>
-    <th>Model</th>
-    <th>Year</th>
-    <th>Color</th>
-    <th>Date listed</th>
-    <th>Date sold</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div style="float: left">
+  <h2>Sold</h2>
+  <%= render :partial => 'table', :locals => { :cars => @sold_cars } %>
+</div>
 
-<% @cars.each do |car| %>
-  <tr>
-    <td><%= car.make_id %></td>
-    <td><%= car.price %></td>
-    <td><%= car.model %></td>
-    <td><%= car.year %></td>
-    <td><%= car.color %></td>
-    <td><%= car.date_listed %></td>
-    <td><%= car.date_sold %></td>
-    <td><%= link_to 'Show', car %></td>
-    <td><%= link_to 'Edit', edit_car_path(car) %></td>
-    <td><%= link_to 'Destroy', car, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div style="float: left">
+  <h2>Unsold</h2>
+  <%= render :partial => 'table', :locals => { :cars => @unsold_cars } %>
+</div>
 
-<br />
+<div style="clear: both"></div>
 
 <%= link_to 'New Car', new_car_path %>
