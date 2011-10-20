@@ -5,3 +5,7 @@
  *= require_self
  *= require_tree . 
 */
+
+.currency {
+  text-align: right
+}

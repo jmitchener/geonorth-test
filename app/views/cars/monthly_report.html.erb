@@ -12,7 +12,7 @@
     <tr>
       <td><%= car.date_sold.strftime('%B') %></td>
       <td><%= car.make.name %></td>
-      <td><%= car.price %></td>
+      <td class="currency"><%= number_to_currency car.price, :precision => 0 %></td>
     </tr>
     <% end %>
   </tbody>

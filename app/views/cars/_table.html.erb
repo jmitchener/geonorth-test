@@ -15,7 +15,7 @@
 <% cars.each do |car| %>
   <tr>
     <td><%= car.make.name unless car.make.nil? %></td>
-    <td><%= car.price %></td>
+    <td class="currency"><%= number_to_currency car.price, :precision => 0 %></td>
     <td><%= car.model %></td>
     <td><%= car.year %></td>
     <td><%= car.color %></td>
