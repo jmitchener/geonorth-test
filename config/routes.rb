@@ -1,5 +1,7 @@
 Srdevtest::Application.routes.draw do
-  resources :cars
+  resources :cars do
+    get :monthly_report, :on => :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

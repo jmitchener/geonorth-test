@@ -8,6 +8,11 @@
 </head>
 <body>
 
+  <ul id="topmenu">
+    <li><%= link_to 'Cars', cars_url %></li>
+    <li><%= link_to 'Monthly Report', monthly_report_cars_url %></li>
+  </ul>
+
 <%= yield %>
 
 </body>

@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Make</th>
+      <th>Average Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.date_sold.strftime('%B') %></td>
+      <td><%= car.make.name %></td>
+      <td><%= car.price %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

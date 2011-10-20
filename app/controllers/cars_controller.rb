@@ -54,6 +54,12 @@ class CarsController < ApplicationController
     end
   end
 
+  def monthly_report
+    year = params[:year].nil? ? params[:year] : Time.now.year
+
+    @cars = Car.monthly_report(year)
+  end
+
   # PUT /cars/1
   # PUT /cars/1.json
   def update
