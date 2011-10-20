@@ -16,12 +16,12 @@
     <%= f.collection_select :make_id, Make.all, :id, :name, :prompt => true %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
-    <%= f.number_field :price %>
-  </div>
-  <div class="field">
     <%= f.label :model %><br />
     <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
   </div>
   <div class="field">
     <%= f.label :year %><br />
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :date_listed %><br />
-    <%= f.datetime_select :date_listed, :prompt => true %>
+    <%= f.datetime_select :date_listed %>
   </div>
   <div class="field">
     <%= f.label :date_sold %><br />
