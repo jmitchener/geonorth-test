@@ -45,7 +45,7 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
+        format.html { redirect_to cars_url, notice: 'Car was successfully created.' }
         format.json { render json: @car, status: :created, location: @car }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class CarsController < ApplicationController
 
     respond_to do |format|
       if @car.update_attributes(params[:car])
-        format.html { redirect_to @car, notice: 'Car was successfully updated.' }
+        format.html { redirect_to cars_url, notice: 'Car was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
