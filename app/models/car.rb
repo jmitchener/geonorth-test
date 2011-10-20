@@ -14,10 +14,11 @@ class Car < ActiveRecord::Base
     end
 
     # only get cars within this year
-    cars = where("TO_CHAR(date_sold, 'YYYY') = '#{year}'")
+    cars = where("TO_CHAR(date_sold, 'YYYY') = '?'", year)
 
-    # Merge all dates for a given month in to day 1 of that month
-    cars = cars.select "DATE('#{year}-' || TO_CHAR(date_sold, 'MM') || '-01') AS date_sold"
+    # Merge all dates for a given month in to day 1 of that month for grouping
+    # Use year.to_i since we can't sanitize select
+    cars = cars.select("DATE('#{year.to_i}' || '-' || TO_CHAR(date_sold, 'MM') || '-01') AS date_sold")
 
     cars = cars.select('make_id')
     cars = cars.select('avg(price) AS price')
