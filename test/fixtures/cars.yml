@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  make_id: 1
+  price: 1
+  model: MyString
+  year: 1
+  color: MyString
+  date_listed: 2011-10-19 20:53:06
+  date_sold: 2011-10-19 20:53:06
+
+two:
+  make_id: 1
+  price: 1
+  model: MyString
+  year: 1
+  color: MyString
+  date_listed: 2011-10-19 20:53:06
+  date_sold: 2011-10-19 20:53:06
