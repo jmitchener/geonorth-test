@@ -9,9 +9,7 @@ class Car < ActiveRecord::Base
   validates :year, :presence => true
 
   def self.monthly_report(year)
-    if year.nil?
-      year = Time.now.year
-    end
+    year = Time.now.year if year.nil?
 
     # only get cars within this year
     cars = where("TO_CHAR(date_sold, 'YYYY') = '?'", year)

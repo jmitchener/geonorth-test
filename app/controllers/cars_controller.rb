@@ -55,7 +55,7 @@ class CarsController < ApplicationController
   end
 
   def monthly_report
-    year = params[:year].nil? ? params[:year] : Time.now.year
+    year = params[:year] or Time.now.year
 
     @cars = Car.monthly_report(year)
   end
